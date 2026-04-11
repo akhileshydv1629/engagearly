@@ -1,60 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional IT Company</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engagearly</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{background:#0f172a;color:#fff}
+
+/* NAVBAR */
+header{
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+position:fixed;
+width:100%;
+z-index:1000;
+background:rgba(0,0,0,0.5);
+backdrop-filter: blur(10px);
+}
+header h1{color:#fff}
+nav a{
+color:#fff;
+margin-left:25px;
+text-decoration:none;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1551434678-e076c223a692');
+background-size:cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+.hero h2{font-size:55px;max-width:900px}
+.hero p{margin-top:20px;font-size:18px;color:#ddd}
+.btn{
+margin-top:30px;
+background:#ff6a00;
+padding:15px 30px;
+border-radius:30px;
+text-decoration:none;
+color:#fff;
+font-weight:600;
+}
+
+/* SECTION */
+section{padding:100px 60px;text-align:center}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:15px;
+transition:0.3s;
+}
+.card:hover{transform:translateY(-10px)}
+
+/* STATS */
+.stats{
+display:flex;
+justify-content:space-around;
+background:#ff6a00;
+padding:60px;
+}
+.stats div{
+font-size:28px;
+font-weight:bold;
+}
+
+/* CTA */
+.cta{
+background:linear-gradient(135deg,#ff6a00,#ff9e00);
+padding:80px;
+}
+
+/* CONTACT */
+.contact p{margin:10px 0}
+
+/* FOOTER */
+footer{
+background:#020617;
+padding:30px;
+text-align:center;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to Our Professional IT Company</h1>
-        <nav>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="hero">
-            <h2>Your Partner in Digital Transformation</h2>
-            <img src="hero-image.jpg" alt="Hero Image" />
-            <p>We deliver high-quality IT solutions tailored to your business needs.</p>
-        </section>
-        <section id="services">
-            <h3>Our Services</h3>
-            <div class="service-item">
-                <h4>Consulting</h4>
-                <p>Expert guidance to help you make informed IT decisions.</p>
-            </div>
-            <div class="service-item">
-                <h4>Development</h4>
-                <p>Custom software development to fit your unique requirements.</p>
-            </div>
-            <div class="service-item">
-                <h4>Support</h4>
-                <p>Reliable support to maintain your systems and applications.</p>
-            </div>
-        </section>
-        <section id="about">
-            <h3>About Us</h3>
-            <p>Inspired by industry leaders like TCS, Infosys, Accenture, and Wipro, we specialize in providing cutting-edge technology solutions to businesses worldwide.</p>
-        </section>
-        <section id="contact">
-            <h3>Contact Us</h3>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <input type="submit" value="Submit">
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Professional IT Company. All rights reserved.</p>
-    </footer>
+
+<header>
+<h1>Engagearly</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#apps">Apps</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Build Powerful Apps That Truly Engage</h2>
+<p>Android & iOS apps for students, businesses, libraries & communities — on easy installment plans.</p>
+<a href="#contact" class="btn">Start Your Project</a>
+</section>
+
+<section>
+<h2>Trusted App Development Partner</h2>
+<p>We build engaging platforms for education, businesses & communities.</p>
+
+<div class="grid">
+<div class="card"><h3>🎓 Education Apps</h3><p>Quizzes, leaderboards & learning tools</p></div>
+<div class="card"><h3>📚 Library Systems</h3><p>Complete ecosystem for aspirants</p></div>
+<div class="card"><h3>📍 Local Apps</h3><p>Pincode-based smart discovery</p></div>
+<div class="card"><h3>📱 Custom Apps</h3><p>Tailored solutions for your business</p></div>
+</div>
+</section>
+
+<section id="apps">
+<h2>Our Products</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Engage Englisian</h3>
+<p>Learn English through real videos & quizzes.</p>
+</div>
+
+<div class="card">
+<h3>Engage Librarian</h3>
+<p>Complete learning & library platform.</p>
+</div>
+
+<div class="card">
+<h3>School App</h3>
+<p>All-in-one school management system.</p>
+</div>
+
+<div class="card">
+<h3>CustEngage</h3>
+<p>Smart local discovery platform.</p>
+</div>
+</div>
+</section>
+
+<section class="stats">
+<div>8+ Years Experience</div>
+<div>50+ Apps Built</div>
+<div>100% Client Satisfaction</div>
+</section>
+
+<section class="cta">
+<h2>Have an Idea? Let's Build It</h2>
+<p>Turn your concept into a scalable mobile app.</p>
+<a href="#contact" class="btn">Contact Now</a>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact Us</h2>
+<p>Email: demo@engagearly.com</p>
+<p>Phone: +91 9876543210</p>
+<p>Address: Pune, Maharashtra, India</p>
+</section>
+
+<footer>
+<p>© 2026 Engagearly | Apps that Engage</p>
+</footer>
+
 </body>
 </html>
