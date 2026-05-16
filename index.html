@@ -1,459 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Engagearly</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<link rel="icon" type="image/png" href="Engagearlylogo.png">
-
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#0f172a;
-color:#fff;
-}
-
-/* NAVBAR */
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-position:fixed;
-width:100%;
-z-index:1000;
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(10px);
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-font-size:22px;
-font-weight:600;
-}
-
-.logo img{
-height:40px;
-}
-
-nav a{
-color:#fff;
-margin-left:25px;
-text-decoration:none;
-font-weight:500;
-transition:.3s;
-}
-
-nav a:hover{
-color:#ff9e00;
-}
-
-/* HERO */
-.hero{
-min-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
-url('https://images.unsplash.com/photo-1551434678-e076c223a692');
-background-size:cover;
-background-position:center;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:120px 20px 40px;
-}
-
-/* FEATURED PINSHO */
-.top-app{
-background:rgba(30,41,59,.95);
-border:1px solid rgba(255,106,0,.3);
-padding:18px;
-border-radius:22px;
-max-width:340px;
-width:100%;
-margin-bottom:35px;
-box-shadow:0 10px 30px rgba(0,0,0,.35);
-backdrop-filter:blur(10px);
-transition:.3s;
-}
-
-.top-app:hover{
-transform:translateY(-4px);
-}
-
-.top-badge{
-display:inline-block;
-background:#ff6a00;
-padding:5px 14px;
-border-radius:30px;
-font-size:12px;
-font-weight:600;
-margin-bottom:12px;
-}
-
-.top-app img{
-width:72px;
-height:72px;
-border-radius:18px;
-margin-bottom:10px;
-}
-
-.top-app h3{
-font-size:22px;
-margin-bottom:8px;
-}
-
-.top-app p{
-font-size:14px;
-color:#ddd;
-margin-bottom:15px;
-line-height:1.5;
-}
-
-.hero h2{
-font-size:58px;
-line-height:1.2;
-max-width:900px;
-}
-
-.hero p{
-margin-top:18px;
-font-size:18px;
-color:#ddd;
-max-width:700px;
-}
-
-.btn{
-margin-top:28px;
-background:#ff6a00;
-padding:15px 30px;
-border-radius:30px;
-text-decoration:none;
-color:#fff;
-font-weight:600;
-display:inline-block;
-transition:.3s;
-}
-
-.btn:hover{
-transform:scale(1.05);
-}
-
-/* PLAY BUTTON */
-.playstore-btn{
-display:inline-block;
-background:#22c55e;
-padding:10px 18px;
-border-radius:30px;
-text-decoration:none;
-color:#fff;
-font-weight:600;
-transition:.3s;
-font-size:14px;
-}
-
-.playstore-btn:hover{
-background:#16a34a;
-transform:scale(1.05);
-}
-
-/* SECTION */
-section{
-padding:100px 60px;
-text-align:center;
-scroll-margin-top:100px;
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-margin-top:40px;
-}
-
-/* CARD */
-.card{
-background:#1e293b;
-padding:25px;
-border-radius:18px;
-transition:.3s;
-box-shadow:0 8px 20px rgba(0,0,0,.25);
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.app-card{
-text-align:center;
-}
-
-.app-icon{
-width:90px;
-height:90px;
-border-radius:22px;
-object-fit:cover;
-margin-bottom:15px;
-box-shadow:0 8px 25px rgba(0,0,0,.3);
-}
-
-/* STATS */
-.stats{
-display:flex;
-justify-content:space-around;
-background:#ff6a00;
-padding:60px;
-font-weight:bold;
-}
-
-.stats div{
-font-size:22px;
-}
-
-/* CTA */
-.cta{
-background:linear-gradient(135deg,#ff6a00,#ff9e00);
-padding:80px;
-}
-
-.contact p{
-margin:10px 0;
-}
-
-footer{
-background:#020617;
-padding:30px;
-text-align:center;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-header{
-flex-direction:column;
-align-items:flex-start;
-padding:15px 20px;
-}
-
-nav{
-margin-top:10px;
-display:flex;
-flex-wrap:wrap;
-}
-
-nav a{
-margin:8px 15px 0 0;
-font-size:14px;
-}
-
-.hero{
-padding-top:140px;
-}
-
-.hero h2{
-font-size:34px;
-line-height:1.25;
-}
-
-.hero p{
-font-size:16px;
-}
-
-section{
-padding:60px 20px;
-}
-
-.stats{
-flex-direction:column;
-gap:20px;
-text-align:center;
-padding:40px 20px;
-}
-
-.cta{
-padding:40px 20px;
-}
-
-.top-app{
-max-width:100%;
-padding:16px;
-}
-
-.playstore-btn{
-width:100%;
-}
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#0f172a;color:#fff}
+header{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);z-index:99}
+nav a{color:#fff;text-decoration:none;margin-left:20px}
+.hero{min-height:100vh;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1551434678-e076c223a692') center/cover;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 20px 40px}
+.top-app{background:#1e293b;padding:18px;border-radius:22px;max-width:340px;margin-bottom:25px;box-shadow:0 8px 25px rgba(0,0,0,.3)}
+.top-app img,.icon{width:85px;height:85px;border-radius:20px}
+.btn{display:inline-block;background:#ff6a00;color:#fff;padding:12px 22px;border-radius:30px;text-decoration:none;margin-top:16px}
+.play{background:#22c55e}
+section{padding:80px 20px;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;max-width:1200px;margin:30px auto}
+.card{background:#1e293b;padding:25px;border-radius:18px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));background:#ff6a00;padding:40px;text-align:center;font-weight:700}
+form{max-width:550px;margin:auto}.input{width:100%;padding:14px;border-radius:10px;border:none;margin:8px 0}
+footer{padding:25px;background:#020617;text-align:center}
+.wa{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;text-decoration:none;font-size:28px;padding:15px;border-radius:50%}
+@media(max-width:768px){header{padding:15px;flex-direction:column}.hero h1{font-size:34px}}
 </style>
 </head>
-
 <body>
+<header><h2>Engagearly</h2><nav><a href="#">Home</a><a href="#services">Services</a><a href="#apps">Apps</a><a href="#contact">Contact</a></nav></header>
 
-<header>
-<div class="logo">
-<img src="Engagearlylogo.png" alt="Logo">
-<span>Engagearly</span>
-</div>
-
-<nav>
-<a href="#">Home</a>
-<a href="#services">Services</a>
-<a href="#apps">Apps</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
-
-<!-- HERO -->
 <section class="hero">
-
-<!-- SMALL PINSHO TOP -->
 <div class="top-app">
-
-<span class="top-badge">
-🔥 Featured App
-</span>
-
-<img src="https://play-lh.googleusercontent.com/KHMrDyBwDNjtLzN81l6TV4j4zSZNmPqoJ_BNa38xAHgZFU1cAks2H7W4o9FgmZ0gPcbWR_8CFqav7JnxJds8=w480-h960-rw" alt="PinSho">
-
+<div>🔥 Featured App PinSho</div><br>
+<img src="https://play-lh.googleusercontent.com/KHMrDyBwDNjtLzN81l6TV4j4zSZNmPqoJ_BNa38xAHgZFU1cAks2H7W4o9FgmZ0gPcbWR_8CFqav7JnxJds8=w480-h960-rw">
 <h3>PinSho</h3>
-
-<p>
-Buy products & book local services
-based on your pincode.
-</p>
-
-<a href="https://play.google.com/store/apps/details?id=com.tech.custengage"
-target="_blank"
-class="playstore-btn">
-📲 Download App
-</a>
-
+<p>Discover trusted local shops, buy products and book nearby services — all based on your pincode.</p>
+<a class="btn play" target="_blank" href="https://play.google.com/store/apps/details?id=com.tech.custengage">📲 Download App</a>
 </div>
-
-<h2>Build Powerful Apps That Truly Engage</h2>
-
-<p>
-Android & iOS apps for students, businesses,
-libraries & communities — on easy installment plans.
-</p>
-
-<a href="#contact" class="btn">
-Start Your Project
-</a>
-
+<h1>Build Powerful Apps That Truly Engage</h1>
+<p>We build powerful Android & iOS apps for schools, businesses, libraries & communities.</p>
+<a href="#contact" class="btn">Start Your Project</a>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
 <h2>Trusted App Development Partner</h2>
-
-<p>
-We build engaging platforms for education,
-businesses & communities.
-</p>
-
+<p>Trusted by schools, businesses & communities to build engaging, scalable platforms.</p>
 <div class="grid">
-<div class="card">
-<h3>🎓 Education Apps</h3>
-<p>Quizzes, leaderboards & learning tools</p>
-</div>
-
-<div class="card">
-<h3>📚 Library Systems</h3>
-<p>Complete ecosystem for aspirants</p>
-</div>
-
-<div class="card">
-<h3>📍 Local Apps</h3>
-<p>Pincode-based smart discovery</p>
-</div>
-
-<div class="card">
-<h3>📱 Custom Apps</h3>
-<p>Tailored solutions for your business</p>
-</div>
+<div class="card"><h3>🎓 Education Apps</h3><p>Interactive learning apps with quizzes & engagement tools.</p></div>
+<div class="card"><h3>📚 Library Systems</h3><p>Smart digital library ecosystem for students & aspirants.</p></div>
+<div class="card"><h3>📍 Local Apps</h3><p>Pincode-based platforms for local businesses & services.</p></div>
+<div class="card"><h3>📱 Custom Apps</h3><p>Custom-built Android & iOS apps for your business.</p></div>
 </div>
 </section>
 
-<!-- APPS -->
 <section id="apps">
 <h2>Our Products</h2>
-
 <div class="grid">
-
-<!-- PINSHO -->
-<div class="card app-card">
-<img src="https://play-lh.googleusercontent.com/KHMrDyBwDNjtLzN81l6TV4j4zSZNmPqoJ_BNa38xAHgZFU1cAks2H7W4o9FgmZ0gPcbWR_8CFqav7JnxJds8=w480-h960-rw" class="app-icon">
-<h3>PinSho</h3>
-<p>Pincode-based shopping & service booking app.</p>
-<a href="https://play.google.com/store/apps/details?id=com.tech.custengage" target="_blank" class="playstore-btn">📲 Download</a>
-</div>
-
-<!-- OJASH -->
-<div class="card app-card">
-<img src="https://play-lh.googleusercontent.com/63RJrihjEr2Z7STVkHYHJq1YAzPDwfVYPr876RLfxw1XckzNZCZS6enL8a2Wb6u4VHY=w480-h960-rw" class="app-icon">
-<h3>Ojash School</h3>
-<p>Smart school management for students & teachers.</p>
-<a href="https://play.google.com/store/apps/details?id=com.tech.ojashschool" target="_blank" class="playstore-btn">📲 Download</a>
-</div>
-
-<!-- ENGLISIAN -->
-<div class="card app-card">
-<img src="https://play-lh.googleusercontent.com/JspC_YEOLYOjthKMwaYo8dQk2Mk-BQbjSd5Jwzo2UhQJUsl9Q0KLL7N6cOY3Dvnv2-ATaWQ9UpC5xD0h801njUg=w480-h960-rw" class="app-icon">
-<h3>Engage Englisian</h3>
-<p>Learn English through real videos & quizzes.</p>
-<a href="https://play.google.com/store/apps/details?id=com.tech.engageenglisian" target="_blank" class="playstore-btn">📲 Download</a>
-</div>
-
-<!-- LIBRARIAN -->
-<div class="card app-card">
-<img src="https://play-lh.googleusercontent.com/mgo8S6S8e9XjTsrg1d_rnd9CLAhuwmqw3mdEw5fq2oqcxtai5p-eoqANYd6LjVHVs70ON4BrOxYVJCo2C47VMQ=w480-h960-rw" class="app-icon">
-<h3>Engage Librarian</h3>
-<p>Complete learning & library platform.</p>
-<a href="https://play.google.com/store/apps/details?id=com.tech.engagelibrarian&hl=en_IN" target="_blank" class="playstore-btn">📲 Download</a>
-</div>
-
+<div class="card"><img class="icon" src="https://play-lh.googleusercontent.com/KHMrDyBwDNjtLzN81l6TV4j4zSZNmPqoJ_BNa38xAHgZFU1cAks2H7W4o9FgmZ0gPcbWR_8CFqav7JnxJds8=w480-h960-rw"><h3>PinSho</h3><p>Your local shopping & service booking app.</p><a class="btn play" target="_blank" href="https://play.google.com/store/apps/details?id=com.tech.custengage">Download</a></div>
+<div class="card"><img class="icon" src="https://play-lh.googleusercontent.com/63RJrihjEr2Z7STVkHYHJq1YAzPDwfVYPr876RLfxw1XckzNZCZS6enL8a2Wb6u4VHY=w480-h960-rw"><h3>Engage Students</h3><p>Complete school management platform for students, parents & teachers.</p><a class="btn play" target="_blank" href="https://play.google.com/store/apps/details?id=com.tech.ojashschool">Download</a></div>
+<div class="card"><img class="icon" src="https://play-lh.googleusercontent.com/JspC_YEOLYOjthKMwaYo8dQk2Mk-BQbjSd5Jwzo2UhQJUsl9Q0KLL7N6cOY3Dvnv2-ATaWQ9UpC5xD0h801njUg=w480-h960-rw"><h3>Engage Englisian</h3><p>Learn spoken English through videos & quizzes.</p><a class="btn play" target="_blank" href="https://play.google.com/store/apps/details?id=com.tech.engageenglisian">Download</a></div>
+<div class="card"><img class="icon" src="https://play-lh.googleusercontent.com/mgo8S6S8e9XjTsrg1d_rnd9CLAhuwmqw3mdEw5fq2oqcxtai5p-eoqANYd6LjVHVs70ON4BrOxYVJCo2C47VMQ=w480-h960-rw"><h3>Engage Librarian</h3><p>Digital learning & library platform for students.</p><a class="btn play" target="_blank" href="https://play.google.com/store/apps/details?id=com.tech.engagelibrarian&hl=en_IN">Download</a></div>
 </div>
 </section>
 
 <section class="stats">
-<div>8+ Years Experience</div>
-<div>50+ Apps Built</div>
-<div>100% Client Satisfaction</div>
+<div>8+ Years Experience</div><div>50+ Apps Built</div><div>100% Client Satisfaction</div>
 </section>
 
-<section class="cta">
+<section>
 <h2>Have an Idea? Let's Build It</h2>
-<p>Turn your concept into a scalable mobile app.</p>
+<p>From idea to launch — we help you build scalable mobile apps.</p>
 <a href="#contact" class="btn">Contact Now</a>
 </section>
 
-<section id="contact" class="contact">
-<h2>Contact Us</h2>
-<p>Email: engagearly@gmail.com</p>
-<p>Phone: +91 8390226185</p>
-<p>Address: Mumbai, Maharashtra, India</p>
+<section id="contact">
+<h2>Let’s Build Something Amazing</h2>
+<p>Have an app idea? Reach out for a free consultation.</p>
+<form id="f">
+<input class="input" name="name" placeholder="Name" required>
+<input class="input" name="phone" placeholder="Phone" required>
+<input class="input" name="business" placeholder="Business Type">
+<textarea class="input" name="idea" placeholder="App Idea"></textarea>
+<button class="btn" type="submit">Send Inquiry</button>
+<p id="msg"></p>
+</form>
+<p>Email: engagearly@gmail.com<br>Phone: +91 8390226185<br>Address: Mumbai, Maharashtra, India</p>
 </section>
 
-<footer>
-<p>© 2026 Engagearly | Apps that Engage</p>
-</footer>
-
-</body>
-</html>
+<footer>© 2026 Engagearly | Apps that Engage</footer>
+<a class="wa" href="https://wa.me/918390226185">💬</a>
+<script>
+document.getElementById('f').addEventListener('submit',async e=>{
+e.preventDefault();
+const data=Object.fromEntries(new FormData(e.target).entries());
+await fetch('https://script.google.com/macros/s/AKfycbxoB2MdWxHV38YR_6AjZNcebNLZ0w9pbpX2YFBBEiOKufTrP4M5C7DfFvm52DtxRtg/exec',{method:'POST',body:JSON.stringify(data)});
+document.getElementById('msg').innerText='Thanks! We will contact you soon.';
+e.target.reset();
+});
+</script>
+</body></html>
