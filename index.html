@@ -18,6 +18,10 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 background:#0f172a;
 color:#fff
@@ -55,6 +59,11 @@ color:#fff;
 margin-left:25px;
 text-decoration:none;
 font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ff9e00;
 }
 
 /* HERO */
@@ -81,7 +90,8 @@ max-width:900px
 .hero p{
 margin-top:20px;
 font-size:18px;
-color:#ddd
+color:#ddd;
+max-width:700px;
 }
 
 .btn{
@@ -119,12 +129,13 @@ margin-top:40px;
 .card{
 background:#1e293b;
 padding:25px;
-border-radius:15px;
-transition:0.3s;
+border-radius:18px;
+transition:.3s;
+box-shadow:0 8px 20px rgba(0,0,0,.2);
 }
 
 .card:hover{
-transform:translateY(-10px)
+transform:translateY(-8px)
 }
 
 /* APP CARD */
@@ -138,13 +149,30 @@ height:95px;
 border-radius:22px;
 object-fit:cover;
 margin-bottom:15px;
-box-shadow:0 8px 25px rgba(0,0,0,0.3);
+box-shadow:0 8px 25px rgba(0,0,0,.3);
 }
 
+/* FEATURED APP */
+.featured-app{
+max-width:500px;
+margin:40px auto 60px;
+border:2px solid #ff6a00;
+background:linear-gradient(135deg,#1e293b,#0f172a);
+}
+
+.featured-badge{
+display:inline-block;
+background:#ff6a00;
+padding:6px 15px;
+border-radius:30px;
+font-size:13px;
+font-weight:600;
+margin-bottom:15px;
+}
+
+/* PLAYSTORE BUTTON */
 .playstore-btn{
-display:inline-flex;
-align-items:center;
-gap:10px;
+display:inline-block;
 margin-top:18px;
 background:#22c55e;
 padding:12px 22px;
@@ -152,17 +180,12 @@ border-radius:30px;
 text-decoration:none;
 color:#fff;
 font-weight:600;
-transition:0.3s;
+transition:.3s;
 }
 
 .playstore-btn:hover{
 background:#16a34a;
 transform:scale(1.05);
-}
-
-.playstore-btn img{
-width:24px;
-height:24px;
 }
 
 /* STATS */
@@ -184,12 +207,10 @@ background:linear-gradient(135deg,#ff6a00,#ff9e00);
 padding:80px;
 }
 
-/* CONTACT */
 .contact p{
 margin:10px 0;
 }
 
-/* FOOTER */
 footer{
 background:#020617;
 padding:30px;
@@ -207,15 +228,21 @@ padding:15px 20px;
 
 nav{
 margin-top:10px;
+display:flex;
+flex-wrap:wrap;
 }
 
 nav a{
-margin-left:15px;
+margin:8px 15px 0 0;
 font-size:14px;
 }
 
 .hero h2{
-font-size:32px;
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
 }
 
 section{
@@ -226,10 +253,20 @@ padding:60px 20px;
 flex-direction:column;
 gap:20px;
 text-align:center;
+padding:40px 20px;
 }
 
 .cta{
 padding:40px 20px;
+}
+
+.app-icon{
+width:85px;
+height:85px;
+}
+
+.playstore-btn{
+width:100%;
 }
 }
 </style>
@@ -255,16 +292,28 @@ padding:40px 20px;
 <!-- HERO -->
 <section class="hero">
 <h2>Build Powerful Apps That Truly Engage</h2>
-<p>Android & iOS apps for students, businesses, libraries & communities — on easy installment plans.</p>
-<a href="#contact" class="btn">Start Your Project</a>
+
+<p>
+Android & iOS apps for students, businesses,
+libraries & communities — on easy installment plans.
+</p>
+
+<a href="#contact" class="btn">
+Start Your Project
+</a>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
 <h2>Trusted App Development Partner</h2>
-<p>We build engaging platforms for education, businesses & communities.</p>
+
+<p>
+We build engaging platforms for education,
+businesses & communities.
+</p>
 
 <div class="grid">
+
 <div class="card">
 <h3>🎓 Education Apps</h3>
 <p>Quizzes, leaderboards & learning tools</p>
@@ -284,6 +333,7 @@ padding:40px 20px;
 <h3>📱 Custom Apps</h3>
 <p>Tailored solutions for your business</p>
 </div>
+
 </div>
 </section>
 
@@ -291,51 +341,122 @@ padding:40px 20px;
 <section id="apps">
 <h2>Our Products</h2>
 
-<div class="grid">
+<!-- PINSHO FEATURED TOP -->
+<div class="card app-card featured-app">
 
-<!-- CUST ENGAGE TOP -->
-<div class="card app-card">
-<img src="https://play-lh.googleusercontent.com/KHMrDyBwDNjtLzN81l6TV4j4zSZNmPqoJ_BNa38xAHgZFU1cAks2H7W4o9FgmZ0gPcbWR_8CFqav7JnxJds8=w480-h960-rw" class="app-icon" alt="CustEngage">
+<span class="featured-badge">
+🔥 Featured App
+</span>
 
-<h3>CustEngage</h3>
+<img src="https://play-lh.googleusercontent.com/KHMrDyBwDNjtLzN81l6TV4j4zSZNmPqoJ_BNa38xAHgZFU1cAks2H7W4o9FgmZ0gPcbWR_8CFqav7JnxJds8=w480-h960-rw"
+class="app-icon"
+alt="PinSho">
 
-<p>E-commerce + Service Booking platform based on your pincode. Buy products & book local services easily.</p>
+<h3>PinSho (CustEngage)</h3>
 
-<a href="https://play.google.com/store/apps/details?id=com.tech.custengage" target="_blank" class="playstore-btn">
+<p>
+E-commerce + service booking platform
+based on your pincode. Buy products
+and book local services easily.
+</p>
+
+<a href="https://play.google.com/store/apps/details?id=com.tech.custengage"
+target="_blank"
+class="playstore-btn">
 📲 Download App
 </a>
+
+</div>
+
+<!-- PRODUCTS ROW -->
+<div class="grid">
+
+<!-- PINSHO AGAIN -->
+<div class="card app-card">
+
+<img src="https://play-lh.googleusercontent.com/KHMrDyBwDNjtLzN81l6TV4j4zSZNmPqoJ_BNa38xAHgZFU1cAks2H7W4o9FgmZ0gPcbWR_8CFqav7JnxJds8=w480-h960-rw"
+class="app-icon"
+alt="PinSho">
+
+<h3>PinSho</h3>
+
+<p>
+Pincode-based shopping &
+service booking app.
+</p>
+
+<a href="https://play.google.com/store/apps/details?id=com.tech.custengage"
+target="_blank"
+class="playstore-btn">
+📲 Download
+</a>
+
 </div>
 
 <!-- OJASH SCHOOL -->
 <div class="card app-card">
-<img src="https://play-lh.googleusercontent.com/63RJrihjEr2Z7STVkHYHJq1YAzPDwfVYPr876RLfxw1XckzNZCZS6enL8a2Wb6u4VHY=w480-h960-rw" class="app-icon" alt="Ojash School">
+
+<img src="https://play-lh.googleusercontent.com/63RJrihjEr2Z7STVkHYHJq1YAzPDwfVYPr876RLfxw1XckzNZCZS6enL8a2Wb6u4VHY=w480-h960-rw"
+class="app-icon"
+alt="Ojash School">
 
 <h3>Ojash School</h3>
 
-<p>Smart school management system for students, parents & teachers.</p>
+<p>
+Smart school management system
+for students & teachers.
+</p>
 
-<a href="https://play.google.com/store/apps/details?id=com.tech.ojashschool" target="_blank" class="playstore-btn">
-📲 Download App
+<a href="https://play.google.com/store/apps/details?id=com.tech.ojashschool"
+target="_blank"
+class="playstore-btn">
+📲 Download
 </a>
+
 </div>
 
 <!-- ENGAGE ENGLISIAN -->
 <div class="card app-card">
-<img src="https://play-lh.googleusercontent.com/JspC_YEOLYOjthKMwaYo8dQk2Mk-BQbjSd5Jwzo2UhQJUsl9Q0KLL7N6cOY3Dvnv2-ATaWQ9UpC5xD0h801njUg=w480-h960-rw" class="app-icon" alt="Engage Englisian">
+
+<img src="https://play-lh.googleusercontent.com/JspC_YEOLYOjthKMwaYo8dQk2Mk-BQbjSd5Jwzo2UhQJUsl9Q0KLL7N6cOY3Dvnv2-ATaWQ9UpC5xD0h801njUg=w480-h960-rw"
+class="app-icon"
+alt="Engage Englisian">
 
 <h3>Engage Englisian</h3>
 
-<p>Learn English through real videos & quizzes.</p>
+<p>
+Learn English through
+real videos & quizzes.
+</p>
 
-<a href="https://play.google.com/store/apps/details?id=com.tech.engageenglisian" target="_blank" class="playstore-btn">
-📲 Download App
+<a href="https://play.google.com/store/apps/details?id=com.tech.engageenglisian"
+target="_blank"
+class="playstore-btn">
+📲 Download
 </a>
+
 </div>
 
-<!-- EXISTING APP -->
-<div class="card">
+<!-- ENGAGE LIBRARIAN -->
+<div class="card app-card">
+
+<img src="https://play-lh.googleusercontent.com/mgo8S6S8e9XjTsrg1d_rnd9CLAhuwmqw3mdEw5fq2oqcxtai5p-eoqANYd6LjVHVs70ON4BrOxYVJCo2C47VMQ=w480-h960-rw"
+class="app-icon"
+alt="Engage Librarian">
+
 <h3>Engage Librarian</h3>
-<p>Complete learning & library platform.</p>
+
+<p>
+Complete learning &
+library platform.
+</p>
+
+<a href="https://play.google.com/store/apps/details?id=com.tech.engagelibrarian&hl=en_IN"
+target="_blank"
+class="playstore-btn">
+📲 Download
+</a>
+
 </div>
 
 </div>
@@ -352,7 +473,9 @@ padding:40px 20px;
 <section class="cta">
 <h2>Have an Idea? Let's Build It</h2>
 <p>Turn your concept into a scalable mobile app.</p>
-<a href="#contact" class="btn">Contact Now</a>
+<a href="#contact" class="btn">
+Contact Now
+</a>
 </section>
 
 <!-- CONTACT -->
