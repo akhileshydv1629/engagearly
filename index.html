@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Engagearly</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://googleapis.com" rel="stylesheet">
 
 <!-- ✅ Favicon -->
 <link rel="icon" type="image/png" href="Engagearlylogo.png">
@@ -28,12 +28,13 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 60px;
+padding:15px 60px;
 position:fixed;
 width:100%;
 z-index:1000;
-background:rgba(0,0,0,0.5);
+background:rgba(15, 23, 42, 0.85);
 backdrop-filter: blur(10px);
+border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 /* LOGO */
@@ -49,19 +50,49 @@ font-weight:600;
 height:40px;
 }
 
-/* NAV */
+/* NAV MAIN CONTAINER */
+.nav-container {
+display:flex;
+align-items:center;
+gap:30px;
+}
+
+/* NAV LINKS */
 nav a{
 color:#fff;
 margin-left:25px;
 text-decoration:none;
 font-weight:500;
+transition: color 0.2s;
+}
+
+nav a:hover {
+color: #ff6a00;
+}
+
+/* ⭐ HEADER CTA BUTTON */
+.header-btn {
+background:#ff6a00;
+padding:10px 20px;
+border-radius:20px;
+text-decoration:none;
+color:#fff;
+font-weight:600;
+font-size: 14px;
+transition: background 0.2s, transform 0.2s;
+box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
+}
+
+.header-btn:hover {
+background:#e05d00;
+transform: translateY(-2px);
 }
 
 /* HERO */
 .hero{
 height:100vh;
 background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-url('https://images.unsplash.com/photo-1551434678-e076c223a692');
+url('https://unsplash.com');
 background-size:cover;
 background-position:center;
 display:flex;
@@ -114,10 +145,39 @@ background:#1e293b;
 padding:25px;
 border-radius:15px;
 transition:0.3s;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:space-between;
 }
 
 .card:hover{
 transform:translateY(-10px)
+}
+
+/* APP CARDS SPECIFIC STYLING */
+.app-icon {
+width: 70px;
+height: 70px;
+border-radius: 16px;
+margin-bottom: 15px;
+object-fit: cover;
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.play-store-btn {
+display: inline-block;
+margin-top: 15px;
+transition: transform 0.2s;
+}
+
+.play-store-btn:hover {
+transform: scale(1.05);
+}
+
+.play-store-btn img {
+height: 45px;
+display: block;
 }
 
 /* STATS */
@@ -156,17 +216,34 @@ text-align:center;
 
 header{
 flex-direction:column;
-align-items:flex-start;
+align-items:center;
 padding:15px 20px;
+gap: 10px;
+}
+
+.nav-container {
+flex-direction: column;
+gap: 12px;
+width: 100%;
+align-items: center;
 }
 
 nav{
-margin-top:10px;
+margin-top:0px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
 }
 
 nav a{
-margin-left:15px;
+margin: 0 10px;
 font-size:14px;
+}
+
+.header-btn {
+width: 100%;
+text-align: center;
+padding: 8px 15px;
 }
 
 .hero h2{
@@ -199,12 +276,16 @@ padding:40px 20px;
 <span>Engagearly</span>
 </div>
 
+<div class="nav-container">
 <nav>
 <a href="#">Home</a>
 <a href="#services">Services</a>
 <a href="#apps">Apps</a>
 <a href="#contact">Contact</a>
 </nav>
+<!-- ⭐ Header Action Button Updated to Pinsho -->
+<a href="https://google.com" target="_blank" class="header-btn">📲 Download Pinsho</a>
+</div>
 </header>
 
 <!-- HERO -->
@@ -232,9 +313,23 @@ padding:40px 20px;
 <h2>Our Products</h2>
 
 <div class="grid">
+<!-- ⭐ Pinsho (formerly CustEngage) is first for maximum visibility -->
 <div class="card">
+<img src="https://googleusercontent.com" alt="Pinsho Icon" class="app-icon">
+<h3>Pinsho</h3>
+<p>E-commerce + Service Booking platform based on your pincode. Buy products & book local services easily.</p>
+<a href="https://google.com" target="_blank" class="play-store-btn">
+<img src="https://google.com" alt="Get it on Google Play">
+</a>
+</div>
+
+<div class="card">
+<img src="https://googleusercontent.com" alt="Engage Englisian Icon" class="app-icon">
 <h3>Engage Englisian</h3>
 <p>Learn English through real videos & quizzes.</p>
+<a href="https://google.com" target="_blank" class="play-store-btn">
+<img src="https://google.com" alt="Get it on Google Play">
+</a>
 </div>
 
 <div class="card">
@@ -243,13 +338,12 @@ padding:40px 20px;
 </div>
 
 <div class="card">
+<img src="https://googleusercontent.com" alt="School App Icon" class="app-icon">
 <h3>School App</h3>
 <p>All-in-one school management system.</p>
-</div>
-
-<div class="card">
-<h3>CustEngage</h3>
-<p>E-commerce + Service Booking platform based on your pincode. Buy products & book local services easily.</p>
+<a href="https://google.com" target="_blank" class="play-store-btn">
+<img src="https://google.com" alt="Get it on Google Play">
+</a>
 </div>
 </div>
 </section>
